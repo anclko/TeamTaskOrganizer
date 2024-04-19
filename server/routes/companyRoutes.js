@@ -6,7 +6,8 @@ import {
     postProject,
 } from "../controllers/projectController.js";
 import {
-    getEmployees
+    getEmployees,
+    postEmployee,
 } from "../controllers/employeeController.js";
 
 //PROJECTS ROUTES
@@ -16,6 +17,7 @@ router.route('/projects').post(postProject);
 
 //EMPLOYEE ROUTES
 router.route('/employees').get(getEmployees);
+router.route('/employees').post(postEmployee);
 
 
 export {router};

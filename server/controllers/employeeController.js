@@ -19,7 +19,25 @@ const getEmployees = asyncHandler(async (req, res) => {
 //@desc create new project
 //@route POST api/employees
 //@access public
+const postEmployee = asyncHandler(async (req, res) => {
+    const { full_name, email, hashed_password } = req.body;
+
+    //check required fields
+    if (!full_name || !email || !hashed_password) {
+        res.status(400);
+        throw new Error("Please provide all info.");
+    }
+    const employee = await Employee.create({
+        full_name,
+        email,
+        hashed_password
+    });
+
+    // Send the created project as a response
+    res.status(201).json(employee);
+});
 
 export {
     getEmployees,
+    postEmployee,
 }
