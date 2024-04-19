@@ -1,10 +1,16 @@
 import mongoose from 'mongoose';
 
-const projectSchema = new mongoose.Schema({
-    project_name: {type: String, required: true},
-    project_description: {type: String, required: true},
+const projectSchema = mongoose.Schema({
+    project_name: {
+        type: String, 
+        required: (true, 'Project name is required'),
+    },
+    project_description: {
+        type: String, 
+        required: (true, 'Project description is required'),
+    },
 });
 
-const Project = mongoose.model('Project', projectSchema);
+export { projectSchema };
 
-export default Project;
+export const Project = mongoose.model('Project', projectSchema);
