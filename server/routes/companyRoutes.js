@@ -8,6 +8,7 @@ import {
 import {
     getEmployees,
     postEmployee,
+    getEmployeeById,
 } from "../controllers/employeeController.js";
 
 //PROJECTS ROUTES
@@ -18,6 +19,6 @@ router.route('/projects').post(postProject);
 //EMPLOYEE ROUTES
 router.route('/employees').get(getEmployees);
 router.route('/employees').post(postEmployee);
-
+router.route('/employees/:id').get(getEmployeeById);
 
 export {router};

@@ -14,7 +14,16 @@ const getEmployees = asyncHandler(async (req, res) => {
 //@desc get employee by id
 //@route Get api/employees/:id
 //@access public
+const getEmployeeById = asyncHandler(async (req, res) => {
+    const employee = await Employee.findById(req.params.id);
 
+    if(employee) {
+        res.status(200).json(employee);
+    } else {
+        res.status(404);
+        throw new Error('Employee not found');
+    }
+});
 
 //@desc create new project
 //@route POST api/employees
@@ -40,4 +49,5 @@ const postEmployee = asyncHandler(async (req, res) => {
 export {
     getEmployees,
     postEmployee,
+    getEmployeeById,
 }
