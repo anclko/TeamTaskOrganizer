@@ -8,7 +8,9 @@ const projectSchema = mongoose.Schema({
     project_description: {
         type: String, 
         required: (true, 'Project description is required'),
-    },
+    }
+}, {
+    versionKey: false
 });
 
 export { projectSchema };

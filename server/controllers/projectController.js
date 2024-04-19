@@ -23,13 +23,28 @@ const getProjectById = asyncHandler(async (req, res) => {
     }
 });
 
-
 //@desc create new project
-//@route Get api/projects
+//@route POST api/projects
 //@access public
+const postProject = asyncHandler(async (req, res) => {
+    const { project_name, project_description } = req.body;
 
+    //check required fields
+    if (!project_name || !project_description) {
+        res.status(400);
+        throw new Error("Please provide all info.");
+    }
+    const project = await Project.create({
+        project_name,
+        project_description
+    });
+
+    // Send the created project as a response
+    res.status(201).json(project);
+});
 
 export {
     getProjects,
     getProjectById,
+    postProject,
 }
