@@ -15,6 +15,8 @@ const projectAssignmentSchema = mongoose.Schema({
         type: Date, 
         required: (true, 'Start date is required')
     },
+}, {
+    versionKey: false
 });
 
 export { projectAssignmentSchema };

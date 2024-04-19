@@ -12,6 +12,7 @@ import {
 } from "../controllers/employeeController.js";
 import {
     getProjectAssignments,
+    postProjectAssignment
 } from "../controllers/projectAssignmentController.js";
 
 
@@ -27,5 +28,6 @@ router.route('/employees/:id').get(getEmployeeById);
 
 //PROJECT ASSIGMENT
 router.route('/project_assignments').get(getProjectAssignments);
+router.route('/project_assignments').post(postProjectAssignment);
 
 export {router};
