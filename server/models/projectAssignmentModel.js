@@ -1,11 +1,22 @@
 import mongoose from 'mongoose';
 
-const projectAssignmentSchema = new mongoose.Schema({
-    employee_id: {type: mongoose.Schema.Types.ObjectId, ref: 'Employee', required: true},
-    project_id: {type: mongoose.Schema.Types.ObjectId, ref: 'Project', required: true},
-    start_date: {type: Date, required: true},
+const projectAssignmentSchema = mongoose.Schema({
+    employee_id: {
+        type: mongoose.Schema.Types.ObjectId, 
+        ref: 'Employee', 
+        required: true
+    },
+    project_id: {
+        type: mongoose.Schema.Types.ObjectId, 
+        ref: 'Project', 
+        required: true
+    },
+    start_date: {
+        type: Date, 
+        required: (true, 'Start date is required')
+    },
 });
 
-const projectAssignment = mongoose.model('ProjectAssignment', projectAssignmentSchema);
+export { projectAssignmentSchema };
 
-export default projectAssignment;
+export const ProjectAssignment = mongoose.model('ProjectAssignment', projectAssignmentSchema);
