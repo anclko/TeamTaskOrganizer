@@ -12,7 +12,16 @@ const getProjects = asyncHandler(async (req, res) => {
 //@desc get project by id
 //@route Get api/projects/:id
 //@access public
+const getProjectById = asyncHandler(async (req, res) => {
+    const project = await Project.findById(req.params.id);
 
+    if(project) {
+        res.status(200).json(project);
+    } else {
+        res.status(404);
+        throw new Error('Project not found');
+    }
+});
 
 
 //@desc create new project
@@ -22,4 +31,5 @@ const getProjects = asyncHandler(async (req, res) => {
 
 export {
     getProjects,
+    getProjectById,
 }
