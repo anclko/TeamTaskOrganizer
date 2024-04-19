@@ -13,6 +13,8 @@ const employeeSchema = mongoose.Schema({
     hashed_password: {
         type: String
     }
+}, {
+    versionKey: false
 });
 
 export { employeeSchema };
