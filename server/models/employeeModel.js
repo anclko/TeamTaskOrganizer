@@ -1,11 +1,20 @@
 import mongoose from 'mongoose';
 
-const employeeSchema = new mongoose.Schema({
-    name: {type: String, required: true},
-    email: {type: String, required: true, unique: true},
-    hashed_password: {type: String}
+const employeeSchema = mongoose.Schema({
+    name: {
+        type: String, 
+        required: (true, 'Name is required'),
+    },
+    email: {
+        type: String, 
+        required: (true, 'Email is required'), 
+        unique: true,
+    },
+    hashed_password: {
+        type: String
+    }
 });
 
-const Employee = mongooose.model('Employee', employeeSchema);
+export { employeeSchema };
 
-export default Employee;
+export const Employee = mongoose.model('Employee', employeeSchema);
