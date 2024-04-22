@@ -20,13 +20,13 @@ const clientDirectory = path.join(__dirname, '../client');
 //serve static files from react
 app.use(express.static(path.join(clientDirectory, 'dist')));
 
+//get projects, employees and project assignments
+app.use("/api", router);
+
 //handle every other route with index.html
 app.get('*', (req, res) => {
   res.sendFile(path.resolve(clientDirectory, 'dist', 'index.html'));
 });
-
-//get projects, employees and project assignments
-app.use("/api", router);
 
 app.listen(port, () => {
   console.log(`Server is running on port ${port}`);
