@@ -22,7 +22,11 @@ const postProjectAssignment = async (req, res) => {
     try {
         const {employee_id, project_code, start_date} = req.body
 
-        const assignment = await projectAssignmentSchema.create({employee_id, project_code, start_date})
+        const assignment = await projectAssignmentSchema.create({
+            employee_id, 
+            project_code, 
+            start_date
+        })
         if(!employee_id || !project_code || !start_date){
             res.status(404)
             throw new Error("All details needed to create an assignment")

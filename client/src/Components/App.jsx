@@ -3,6 +3,7 @@ import React from 'react';
 import Employee from './Employee';
 import Project from './Project';
 import ProjectAssignment from './ProjectAssignement';
+import CombinedData from './CombinedData';
 
 function App() {
   return(
@@ -11,6 +12,7 @@ function App() {
       <Employee />
       <Project />
       <ProjectAssignment />
+      <CombinedData />
     </div>
   )
 }
