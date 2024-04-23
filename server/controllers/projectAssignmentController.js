@@ -18,25 +18,33 @@ const getProjectAssignments = async (req,res) => {
 //@desc create new project assignment
 //@route POST api/project_assignments
 //@access public
-const postProjectAssignment = async (req, res) => {
-    try {
-        const {employee_id, project_code, start_date} = req.body
+//@desc create new project assignment
+//@route POST api/project_assignments
+//@access public
+const postProjectAssignment = asyncHandler(async (req, res) => {
+    const { employee_id, project_code, start_date } = req.body;
 
-        const assignment = await projectAssignmentSchema.create({
+    // Check required fields
+    if (!employee_id || !project_code || !start_date) {
+        res.status(400);
+        throw new Error("All details are needed to create an assignment: employee ID, project code, and start date.");
+    }
+
+    // Attempt to create the project assignment
+    try {
+        const assignment = await ProjectAssignment.create({
             employee_id, 
             project_code, 
             start_date
-        })
-        if(!employee_id || !project_code || !start_date){
-            res.status(404)
-            throw new Error("All details needed to create an assignment")
-        }
-        res.status(201).json({assignment})
+        });
 
+        // Send the created assignment as a response
+        res.status(201).json(assignment);
     } catch (error) {
-        res.status(500).json({ error: err.message })
+        res.status(500).json({ error: error.message });
     }
-}
+});
+
 
 export {
     getProjectAssignments,
