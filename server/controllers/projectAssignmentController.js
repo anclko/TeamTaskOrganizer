@@ -24,7 +24,7 @@ const postProjectAssignment = asyncHandler(async (req, res) => {
     // Check required fields
     if (!employee_id || !project_code || !start_date) {
         res.status(400);
-        throw new Error("All details are needed to create an assignment: employee ID, project code, and start date.");
+        throw new Error("All details are needed to create an assignment");
     }
 
     // Attempt to create the project assignment

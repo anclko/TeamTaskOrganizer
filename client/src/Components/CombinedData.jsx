@@ -19,7 +19,7 @@ function CombinedData() {
       //getting the projects based on the project id and get employee name base don employee id by matching
       const mergedData = assignments.map(assignment => {
         const matchedEmployee = employees.find(employee => employee.employee_id === assignment.employee_id);
-        const matchedProject = projects.find(project => project.project_id === assignment.project_id);
+        const matchedProject = projects.find(project => project.project_code === assignment.project_code);
         return {
           employeeID: assignment.employee_id,
           employeeName: matchedEmployee ? matchedEmployee.full_name : 'No name available',

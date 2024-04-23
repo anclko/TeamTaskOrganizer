@@ -5,7 +5,7 @@ const projectAssignmentSchema = mongoose.Schema({
         type: Number,
         required: (true, 'Employee ID is required')
     },
-    project_id: {
+    project_code: {
         type: Number,
         required: true
     },
