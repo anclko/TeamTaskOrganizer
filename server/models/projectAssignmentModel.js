@@ -2,13 +2,11 @@ import mongoose from 'mongoose';
 
 const projectAssignmentSchema = mongoose.Schema({
     employee_id: {
-        type: mongoose.Schema.Types.ObjectId, 
-        ref: 'Employee', 
-        required: true
+        type: Number,
+        required: (true, 'Employee ID is required')
     },
     project_id: {
-        type: mongoose.Schema.Types.ObjectId, 
-        ref: 'Project', 
+        type: Number,
         required: true
     },
     start_date: {

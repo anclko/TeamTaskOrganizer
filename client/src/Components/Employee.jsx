@@ -21,6 +21,7 @@ function EmployeeTable() {
         <thead>
           <tr>
             <th>Name</th>
+            <th>Employee ID</th>
             <th>Email</th>
             <th>Hashed Password</th>
           </tr>
@@ -29,6 +30,7 @@ function EmployeeTable() {
           {employees.map(employee => (
             <tr key={employee._id}>
               <td>{employee.full_name}</td>
+              <td>{employee.employee_id}</td>
               <td>{employee.email}</td>
               <td>{employee.hashed_password}</td>
             </tr>

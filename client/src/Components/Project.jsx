@@ -21,6 +21,7 @@ function ProjectTable() {
         <thead>
           <tr>
             <th>Name</th>
+            <th>Project Code</th>
             <th>Description</th>
           </tr>
         </thead>
@@ -28,6 +29,7 @@ function ProjectTable() {
           {projects.map(project => (
             <tr key={project._id}>
               <td>{project.project_name}</td>
+              <td>{project.project_code}</td>
               <td>{project.project_description}</td>
             </tr>
           ))}

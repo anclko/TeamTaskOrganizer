@@ -1,6 +1,11 @@
 import mongoose from 'mongoose';
 
 const projectSchema = mongoose.Schema({
+    project_code: {
+        type: Number, 
+        required: (true, 'Project code is required'),
+        unique: true,
+    },
     project_name: {
         type: String, 
         required: (true, 'Project name is required'),
