@@ -18,9 +18,6 @@ const getProjectAssignments = async (req,res) => {
 //@desc create new project assignment
 //@route POST api/project_assignments
 //@access public
-//@desc create new project assignment
-//@route POST api/project_assignments
-//@access public
 const postProjectAssignment = asyncHandler(async (req, res) => {
     const { employee_id, project_code, start_date } = req.body;
 

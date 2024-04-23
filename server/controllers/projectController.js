@@ -29,7 +29,7 @@ const getProjectById = asyncHandler(async (req, res) => {
 const postProject = asyncHandler(async (req, res) => {
     const { project_code, project_name, project_description } = req.body;
 
-    // Check required fields
+    //check required fields
     if (!project_code || !project_name || !project_description) {
         res.status(400).json({ message: "Provide all necessary information please" });
         return;
