@@ -7,10 +7,10 @@ function ProjectAssignments() {
     fetch('/api/project_assignments')
       .then(response => response.json())
       .then(data => {
-        setAssignments(data.proj); // Assuming your API wraps the assignments in a 'proj' object
+        setAssignments(data.proj);
       })
       .catch(error => {
-        console.error('Error fetching project assignments:', error);
+        console.error('Error finding project assignments:', error);
       });
   }, []);
 
