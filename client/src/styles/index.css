@@ -7,9 +7,6 @@ body {
 }
 
 .header-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
     padding: 20px;
     background: white hsla(0, 0%, 100%, 0.534);
     border-radius: 8px;
