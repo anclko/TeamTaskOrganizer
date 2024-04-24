@@ -14,8 +14,10 @@ function CombinedData() {
       const employees = await employeesResponse.json();
       const projects = await projectsResponse.json();
       const assignments = (await assignmentsResponse.json()).proj;
-
-      const mergedData = assignments.map(assignment => {
+  
+      const recentAssignments = assignments.slice(-5);
+  
+      const mergedData = recentAssignments.map(assignment => {
         const matchedEmployee = employees.find(employee => employee.employee_id === assignment.employee_id);
         const matchedProject = projects.find(project => project.project_code === assignment.project_code);
         return {
@@ -25,30 +27,28 @@ function CombinedData() {
           startDate: assignment.start_date.split('T')[0]
         };
       });
-
-      //get only 5 entries
-      const latestData = mergedData.slice(0, 5);
-      setCombinedEntries(latestData);
+  
+      setCombinedEntries(mergedData);
     } catch (error) {
-      console.error('problem fetching and combining data:', error);
+      console.error('Problem fetching and combining data:', error);
     }
   };
 
   useEffect(() => {
     fetchAndCombineData();
-    const refreshInterval = setInterval(fetchAndCombineData, 60000);
+    const refreshInterval = setInterval(fetchAndCombineData, 10000); // update every 10 seconds
     return () => clearInterval(refreshInterval);
   }, []);
 
   return (
     <div className="table-container">
-      <h2 className="title">List of projects:</h2>
+      <h2 className="title">List of Projects</h2>
       <table className="combined-table">
         <thead>
           <tr>
             <th>Employee ID</th>
             <th>Employee Name</th>
-            <th>Assigned To:</th>
+            <th>Project Name</th>
             <th>Project Start Date</th>
           </tr>
         </thead>
