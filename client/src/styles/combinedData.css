@@ -1,0 +1,18 @@
+.table-container {
+    margin: 20px;
+    font-family: Arial, sans-serif;
+}
+
+.title {
+    color: red;
+}
+
+.combined-table {
+    width: 100%;
+    border: solid 1px #ccc;
+}
+
+.combined-table th, .combined-table td {
+    padding: 8px;
+    text-align: left;
+}

@@ -42,9 +42,9 @@ function CombinedData() {
   }, []);
 
   return (
-    <div>
-      <h2>List of projects:</h2>
-      <table>
+    <div className="table-container">
+      <h2 className="title">List of projects:</h2>
+      <table className="combined-table">
         <thead>
           <tr>
             <th>Employee ID</th>
