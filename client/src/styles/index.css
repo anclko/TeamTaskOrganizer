@@ -1,0 +1,23 @@
+body {
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(to right, #6a11cb, #2575fc);
+    color: white;
+    font-family: 'Arial', sans-serif;
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background: white hsla(0, 0%, 100%, 0.534);
+    border-radius: 8px;
+    margin: 20px;
+}
+
+.header-container h1 {
+    color: white;
+    font-weight: bold;
+    text-align: center;
+}

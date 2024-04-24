@@ -3,7 +3,6 @@ import React, { useState, useEffect } from 'react';
 function CombinedData() {
   const [combinedEntries, setCombinedEntries] = useState([]);
 
-  //fetching data from different apis to combine them
   const fetchAndCombineData = async () => {
     try {
       const [employeesResponse, projectsResponse, assignmentsResponse] = await Promise.all([
@@ -16,7 +15,6 @@ function CombinedData() {
       const projects = await projectsResponse.json();
       const assignments = (await assignmentsResponse.json()).proj;
 
-      //getting the projects based on the project id and get employee name base don employee id by matching
       const mergedData = assignments.map(assignment => {
         const matchedEmployee = employees.find(employee => employee.employee_id === assignment.employee_id);
         const matchedProject = projects.find(project => project.project_code === assignment.project_code);
@@ -24,11 +22,13 @@ function CombinedData() {
           employeeID: assignment.employee_id,
           employeeName: matchedEmployee ? matchedEmployee.full_name : 'No name available',
           projectName: matchedProject ? matchedProject.project_name : 'No project name available',
-          startDate: assignment.start_date
+          startDate: assignment.start_date.split('T')[0]
         };
       });
 
-      setCombinedEntries(mergedData);
+      //get only 5 entries
+      const latestData = mergedData.slice(0, 5);
+      setCombinedEntries(latestData);
     } catch (error) {
       console.error('problem fetching and combining data:', error);
     }
@@ -36,7 +36,6 @@ function CombinedData() {
 
   useEffect(() => {
     fetchAndCombineData();
-    //refresh every minute or so
     const refreshInterval = setInterval(fetchAndCombineData, 60000);
     return () => clearInterval(refreshInterval);
   }, []);

@@ -1,10 +1,17 @@
 .table-container {
     margin: 20px;
     font-family: Arial, sans-serif;
+    background: white hsla(0, 0%, 100%, 0.534);
+    background-size: auto;
+    color: white;
+    padding: 20px;
+    border-radius: 8px;
 }
 
 .title {
-    color: red;
+    color: white;
+    font-weight: bold;
+    text-align: center;
 }
 
 .combined-table {

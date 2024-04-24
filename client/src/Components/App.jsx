@@ -7,8 +7,8 @@ import CombinedData from './CombinedData';
 
 function App() {
   return(
-    <div>
-      <h1>Welcome to My App</h1>
+    <div className="header-container">
+      <h1 className="header-title">My Company Information</h1>
       <CombinedData />
     </div>
   )
