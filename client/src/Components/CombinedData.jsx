@@ -20,8 +20,8 @@ function CombinedData() {
         const matchedProject = projects.find(project => project.project_code === assignment.project_code);
         return {
           employeeID: assignment.employee_id,
-          employeeName: matchedEmployee ? matchedEmployee.full_name : 'No name available',
-          projectName: matchedProject ? matchedProject.project_name : 'No project name available',
+          employeeName: matchedEmployee ? matchedEmployee.full_name : 'Name undefined',
+          projectName: matchedProject ? matchedProject.project_name : 'Name undefined',
           startDate: assignment.start_date.split('T')[0]
         };
       });
