@@ -85,13 +85,10 @@ Change the method to POST and enter as JSON Content.
 ```bash
 {
     "start_date": #date in following format: "2024-04-25T00:00:00.000Z",
-    "employee_id": #employee_id here
-    "project_code": #project_code here
+    "employee_id": #employee_id here (range: 1 to 10)
+    "project_code": #project_code here (range: 113 to 120)
 }
 ```
-
-The choice of employee_id currently ranges from: 1 to 10.
-The choice of project_code currently ranges from: 113 to 120
 
 Click "Send" and the result should appear within 10 seconds on local
 
