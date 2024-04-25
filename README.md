@@ -80,10 +80,17 @@ This will compile the React application to static files located in the `client/b
 At the moment, the project simply displays the recent 5 entries concerning project assignments. GET method is implememented, POST is implemented without any interactive way of adding.
 Should you want to add project assignments, you have to use either Postman or Thunderclient and format your entry this way:
 
-Change the method to POST and enter as JSON Content.
+Change the method to POST and enter the url:
+
+```bash
+    http://localhost:3000/api/project_assignments
+```
+
+Continue by adding the following information as JSON Content:
 
 ```bash
 {
+    #as JSON Content
     "start_date": #date in following format: "2024-04-25T00:00:00.000Z",
     "employee_id": #employee_id here (range: 1 to 10)
     "project_code": #project_code here (range: 113 to 120)
