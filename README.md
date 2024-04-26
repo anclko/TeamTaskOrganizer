@@ -108,4 +108,5 @@ This project is licensed under the terms of the ISC license.
 
 ## Authors
 
-- Anne-Claire Koch
+- Anne-Claire Koch [anclko@hotmail.com](mailto:anclko@hotmail.com)
+- Email me should you have any questions regarding this project.
