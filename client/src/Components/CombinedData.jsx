@@ -36,7 +36,8 @@ function CombinedData() {
 
   useEffect(() => {
     fetchAndCombineData();
-    const refreshInterval = setInterval(fetchAndCombineData, 10000); // update every 10 seconds
+    //10 second update to check better
+    const refreshInterval = setInterval(fetchAndCombineData, 10000);
     return () => clearInterval(refreshInterval);
   }, []);
 
