@@ -99,10 +99,14 @@ Continue by adding the following information as JSON Content:
 
 Click "Send" and the result should appear within 10 seconds on local
 
+## Quick Note
+The Component files "Employee.jsx", "Project.jsx" and "ProjectAssignment.jsx" in the "client" folder were simply implemented for testing purposes. They do not hold any function in the script. They can be disregarded if needed. The main file holding the fetching of data is in "CombinedData.jsx".
+
 ## License
 
 This project is licensed under the terms of the ISC license.
 
 ## Authors
 
-- Anne-Claire Koch
+- Anne-Claire Koch | email: ([anclko@hotmail.com](mailto:anclko@hotmail.com))
+- Email me should you have any questions regarding this project.
